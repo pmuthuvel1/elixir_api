@@ -47,4 +47,5 @@ defmodule ElixirApiWeb.Endpoint do
   plug Plug.Head
   plug Plug.Session, @session_options
   plug ElixirApiWeb.Router
+  plug CORSPlug, origin: "*"
 end

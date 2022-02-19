@@ -26,6 +26,11 @@ defmodule ElixirApiWeb.Router do
     resources "/products", ProductController, except: [:new, :edit]
   end
 
+  scope "/" do
+    forward "/graph", Absinthe.Plug, schema: ElixirApiWeb.Schema
+    forward "/graphiql", Absinthe.Plug.GraphiQL, schema: ElixirApiWeb.Schema
+  end
+
   # Enables LiveDashboard only for development
   #
   # If you want to use the LiveDashboard in production, you should put

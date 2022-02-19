@@ -20,7 +20,7 @@ defmodule ElixirApi.MixProject do
   def application do
     [
       mod: {ElixirApi.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :absinthe_plug]
     ]
   end
 
@@ -48,7 +48,10 @@ defmodule ElixirApi.MixProject do
       {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
-      {:plug_cowboy, "~> 2.5"}
+      {:plug_cowboy, "~> 2.5"},
+      {:cors_plug, "~> 2.0"},
+      {:absinthe, "~> 1.4"},
+      {:absinthe_plug, "~> 1.4"}
     ]
   end
 
